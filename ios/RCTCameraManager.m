@@ -759,6 +759,7 @@ RCT_EXPORT_METHOD(hasFlash:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRej
 
   dispatch_async(self.sessionQueue, ^{
     [[self.movieFileOutput connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:orientation];
+    [[self.movieFileOutput connectionWithMediaType:AVMediaTypeVideo] setVideoMirrored:true]; //@rob
 
     //Create temporary URL to record to
     NSString *outputPath = [[NSString alloc] initWithFormat:@"%@%@", NSTemporaryDirectory(), @"output.mov"];
